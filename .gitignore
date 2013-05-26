@@ -1,3 +1,7 @@
+.DS_Store
+
+#all ignores below was added by github
+
 *.py[cod]
 
 # C extensions
