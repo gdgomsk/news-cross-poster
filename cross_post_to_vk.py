@@ -13,10 +13,11 @@ import vkontakte
 from apiclient.discovery import build
 
 import constants
+import constants_secret
 from model import CrossPostedToVK
 
-plus = build('plus', 'v1', developerKey=constants.GOOGLE_PLUS_API_KEY)
-vk = vkontakte.API(token=constants.VKONTAKTE_EKATERINA_LUBIMOVA_TOKEN)
+plus = build('plus', 'v1', developerKey=constants_secret.GOOGLE_PLUS_API_KEY)
+vk = vkontakte.API(token=constants_secret.VKONTAKTE_EKATERINA_LUBIMOVA_TOKEN)
 
 class MainHandler(webapp2.RequestHandler):
     """ Обработчик для кросс-постинга постов из g+ в вконтакте. 
