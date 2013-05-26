@@ -67,7 +67,7 @@ class MainHandler(webapp2.RequestHandler):
         cross_posted_info.put()
 
     def cross_post_no_changes(self):
-        vk.wall.post(owner_id=constants.VKONTAKTE_GDG_OMSK_NEWS_GROUP_ID, message="Пока без новостей",
+        vk.wall.post(owner_id=constants.VKONTAKTE_GDG_OMSK_NEWS_GROUP_ID, message="Пока тихо... Ждем новостей!",
            from_group=1, signed=0)
         
 
