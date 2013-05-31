@@ -31,7 +31,9 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write("200 OK")
 
     def fetch_last_posts(self):
-        request = plus.activities().list(userId=constants.GOOGLE_PLUS_GDG_OMSK_ID,collection='public')
+        request = plus.activities().list(userId=constants.GOOGLE_PLUS_GDG_OMSK_ID,
+            collection='public',
+            maxResults=constants.GOOGLE_PLUS_MAX_RESULTS)
         response = request.execute()
         response['items'] = response.get('items')
         return response
@@ -48,7 +50,7 @@ class MainHandler(webapp2.RequestHandler):
         new_ids = self.find_positive_difference(response_ids, cross_posted_info.cross_posted_gplus_ids)
 
         if len(new_ids) == 0:
-            self.cross_post_no_changes()
+            pass #self.cross_post_no_changes()
         else:
             for item in reversed(response.get('items')):
                item_id = item.get('id')
