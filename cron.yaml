@@ -1,4 +1,4 @@
 cron:
-- description: hourly cross post to vk
+- description: 10mins cross post to vk
   url: /cross_post_to_vk
-  schedule: every 60 minutes
+  schedule: every 10 minutes
